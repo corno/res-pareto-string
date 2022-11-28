@@ -1,4 +1,4 @@
-import * as api from "glo-pareto-string"
+import * as api from "../../interface"
 
 export const f_stringLength: api.FStringLength = ($) => {
     return $.length

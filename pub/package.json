@@ -1,8 +1,7 @@
 {
   "author": "Corno",
   "dependencies": {
-    "glo-pareto-string": "^0.1.0",
-    "pareto-core-internals": "^0.9.0"
+    "pareto-core-internals": "^0.11.0"
   },
   "files": [
     "dist",
@@ -22,6 +21,7 @@
     "url": "git+https://github.com/corno/res-pareto-string.git"
   },
   "types": "dist/index.d.ts",
-  "version": "0.1.0",
-  "content-fingerprint": "48a77e63fd9e54f3f30f67dca6814f4ea4cfd0e6"
+  "version": "0.1.1",
+  "interface-fingerprint": "06e94df39aed939f9ad8eee8b706bbbd34d15881",
+  "content-fingerprint": "ec9d1e0c1dcca2517a17561771c8859b6baafb4d"
 }

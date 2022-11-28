@@ -1,4 +1,4 @@
-import * as api from "glo-pareto-string"
+import * as api from "../../interface"
 
 export const f_splitStringIn2: api.FSplitStringIn2 = ($) => {
     const position = $.value.indexOf($.splitter)
