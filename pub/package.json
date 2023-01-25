@@ -22,6 +22,6 @@
     "url": "git+https://github.com/corno/res-pareto-string.git"
   },
   "types": "dist/index.d.ts",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "content-fingerprint": "bf0f6ae14637f0cf341cf7f4c4874fe2c974180c"
 }
