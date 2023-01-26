@@ -12,7 +12,6 @@ import {
     externalTypeReference,
     callback,
     interfaceReference,
-    externalNamespacedTypeReference,
     procedure,
     null_,
     method,
@@ -34,31 +33,28 @@ export const $: mmoduleDefinition.TModuleDefinition = {
             "common": "glo-pareto-common",
         }),
         'parameters': d({}),
-        'namespace': {
-            'types': types({
-                "SplitData": group({
-                    "value": member(str()),
-                    "splitter": member(str()),
-                }),
-                "SplitIn2Result": group({
-                    "first": member(str()),
-                    "second": member(optional(str())),
-                }),
-                "SplitResult": array(str()),
-                "StartsWithData": group({
-                    "contextString": member(str()),
-                    "searchString": member(str()),
-                }),
-                "SubstrData": group({
-                    "value": member(str()),
-                    "begin": member(number()),
-                    "length": member(number()),
-                }),
+        'types': types({
+            "SplitData": group({
+                "value": member(str()),
+                "splitter": member(str()),
             }),
-            'interfaces': d({
+            "SplitIn2Result": group({
+                "first": member(str()),
+                "second": member(optional(str())),
             }),
-
-        },
+            "SplitResult": array(str()),
+            "StartsWithData": group({
+                "contextString": member(str()),
+                "searchString": member(str()),
+            }),
+            "SubstrData": group({
+                "value": member(str()),
+                "begin": member(number()),
+                "length": member(number()),
+            }),
+        }),
+        'interfaces': d({
+        }),
         'functions': d({
             "Substr": _function(typeReference("SubstrData"), externalTypeReference("common", "String")),
             "Split": _function(typeReference("SplitData"), typeReference("SplitResult")),
