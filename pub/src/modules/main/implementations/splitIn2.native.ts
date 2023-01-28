@@ -5,12 +5,12 @@ export const $$: api.CsplitIn2 = ($) => {
     if (position === -1) {
         return {
             first: $.value,
-            second: null
+            second: ['not set', {}],
         }
     } else {
         return {
             first: $.value.substring(0, position),
-            second: $.value.substring(position + $.splitter.length),
+            second: ['set', $.value.substring(position + $.splitter.length)],
         }
     }
 }

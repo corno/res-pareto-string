@@ -14,13 +14,13 @@ export type TStartsWithData = t.UStartsWithData
 
 export type TSubstrData = t.USubstrData
 
+export type FLength = ($: mcommon.TString,) => mcommon.TNumber
+
 export type FSplit = ($: TSplitData,) => TSplitResult
 
 export type FSplitIn2 = ($: TSplitData,) => TSplitIn2Result
 
 export type FStartsWith = ($: TStartsWithData,) => mcommon.TBoolean
-
-export type FStringLength = ($: mcommon.TString,) => mcommon.TNumber
 
 export type FSubstr = ($: TSubstrData,) => mcommon.TString
 

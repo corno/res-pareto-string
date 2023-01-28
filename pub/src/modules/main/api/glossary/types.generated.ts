@@ -2,6 +2,17 @@ import * as pt from 'pareto-core-types'
 
 import * as mcommon from "glo-pareto-common"
 
+export namespace VOptional {
+    
+    export namespace Onot__set {}
+    export type Onot__set<AType> = {}
+}
+export type VOptional<AType> = 
+    | ['not set', VOptional.Onot__set<AType>]
+    | ['set', AType]
+
+export type MOptional<AType> = VOptional<AType>
+
 export namespace GSplitData {}
 export type GSplitData = {
     readonly 'splitter': string
@@ -12,7 +23,7 @@ export type USplitData = GSplitData
 export namespace GSplitIn2Result {
     
     export namespace Psecond {}
-    export type Psecond = null | string
+    export type Psecond = MOptional<string>
 }
 export type GSplitIn2Result = {
     readonly 'first': string

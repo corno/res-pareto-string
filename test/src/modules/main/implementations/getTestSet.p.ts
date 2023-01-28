@@ -24,7 +24,7 @@ export const $$: api.CgetTestSet = () => {
     function createBooleanTest(name: string, test: boolean) {
         builder.add(name, {
             type: ["test", {
-                type: ["boolean",test]
+                type: ["boolean", test]
             }]
         })
     }
@@ -40,10 +40,19 @@ export const $$: api.CgetTestSet = () => {
         value: "bar-foo",
         splitter: "-",
     }).second
-    if (secondPartOfSplitString === null) {
-        fail("unexpected null")
-    } else {
-        createTest("splitIn2", "foo", secondPartOfSplitString)
+    switch (secondPartOfSplitString[0]) {
+        case 'not set':
+            pl.cc(secondPartOfSplitString[1], ($) => {
+                fail("unexpected null")
+            })
+            break
+        case 'set':
+            pl.cc(secondPartOfSplitString[1], ($) => {
+                createTest("splitIn2", "foo", $)
+
+            })
+            break
+        default: pl.au(secondPartOfSplitString[0])
     }
 
     createBooleanTest(
