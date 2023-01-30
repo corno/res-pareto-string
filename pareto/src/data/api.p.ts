@@ -5,17 +5,15 @@ import {
     nested,
     array,
     typeReference,
-    callback,
     interfaceReference,
-    procedure,
     null_,
     method,
-    number, dictionary, group, member, taggedUnion, types, _function, parameter, template,
-} from "lib-pareto-typescript-project/dist/modules/glossary/api/shorthands.p"
+    number, dictionary, group, member, taggedUnion, types, parameter, template, func, data,
+} from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands.p"
 
-import { definitionReference, constructor, algorithm } from "lib-pareto-typescript-project/dist/modules/moduleDefinition/api/shorthands.p"
+import { definitionReference, constructor, algorithm } from "lib-pareto-typescript-project/dist/submodules/moduleDefinition/shorthands.p"
 
-import * as mmoduleDefinition from "lib-pareto-typescript-project/dist/modules/moduleDefinition"
+import * as mmoduleDefinition from "lib-pareto-typescript-project/dist/submodules/moduleDefinition"
 
 const d = pr.wrapRawDictionary
 
@@ -59,12 +57,12 @@ export const $: mmoduleDefinition.TModuleDefinition = {
         'interfaces': d({
         }),
         'functions': d({
-            "Substr": _function(typeReference("SubstrData"), typeReference("common", "String")),
-            "Split": _function(typeReference("SplitData"), typeReference("SplitResult")),
-            "SplitIn2": _function(typeReference("SplitData"), typeReference("SplitIn2Result")),
-            "Length": _function(typeReference("common", "String"), typeReference("common", "Number")),
-            "TrimEnd": _function(typeReference("common", "String"), typeReference("common", "String")),
-            "StartsWith": _function(typeReference("StartsWithData"), typeReference("common", "Boolean")),
+            "Substr": func(typeReference("SubstrData"), null, null, data(typeReference("common", "String"), false)),
+            "Split": func(typeReference("SplitData"), null, null, data(typeReference("SplitResult"), false)),
+            "SplitIn2": func(typeReference("SplitData"), null, null, data(typeReference("SplitIn2Result"), false)),
+            "Length": func(typeReference("common", "String"), null, null, data(typeReference("common", "Number"), false)),
+            "TrimEnd": func(typeReference("common", "String"), null, null, data(typeReference("common", "String"), false)),
+            "StartsWith": func(typeReference("StartsWithData"), null, null, data(typeReference("common", "Boolean"), false)),
         }),
     },
     'api': {
