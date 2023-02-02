@@ -1,21 +1,18 @@
 {
-  "name": "res-pareto-collation",
   "author": "Corno",
   "license": "ISC",
   "description": "a pareto wrapper around basic string operations as Pareto lacks them (yes, really, by design, the idea is to find a way how not to need them, and if you really do, then use this library)",
+
   "dependencies": {
-    "glo-pareto-common": "^0.10.0",
+    "glo-pareto-common": "^0.11.0",
     "pareto-core-internals": "^0.11.0"
   },
   "files": [
     "dist"
   ],
   "repository": {
-    "type": "git",
-    "url": "http://github.com/corno/res-pareto-collation.git"
+    "type": "git"
   },
   "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "version": "0.0.0",
-  "content-fingerprint": "6cfb717889c31b1dc2f5be5f7fdc5d9d160c85e7"
+  "types": "dist/index.d.ts"
 }
