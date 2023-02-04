@@ -2,6 +2,7 @@
   "author": "Corno",
   "license": "ISC",
   "description": "a pareto wrapper around basic string operations as Pareto lacks them (yes, really, by design, the idea is to find a way how not to need them, and if you really do, then use this library)",
+
   "dependencies": {
     "glo-pareto-common": "^0.11.0",
     "pareto-core-internals": "^0.11.0"
@@ -10,12 +11,8 @@
     "dist"
   ],
   "repository": {
-    "type": "git",
-    "url": "http://github.com/corno/res-pareto-string.git"
+    "type": "git"
   },
   "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "name": "res-pareto-string",
-  "version": "0.5.0",
-  "content-fingerprint": "3a2d041543f50e7ec869c656a4fe80f946ed224a"
+  "types": "dist/index.d.ts"
 }
