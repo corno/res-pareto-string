@@ -40,19 +40,11 @@ export const $$: api.CgetTestSet = () => {
         value: "bar-foo",
         splitter: "-",
     }).second
-    switch (secondPartOfSplitString[0]) {
-        case 'not set':
-            pl.cc(secondPartOfSplitString[1], ($) => {
-                fail("unexpected null")
-            })
-            break
-        case 'set':
-            pl.cc(secondPartOfSplitString[1], ($) => {
-                createTest("splitIn2", "foo", $)
+    if (secondPartOfSplitString[0] === true) {
+        createTest("splitIn2", "foo", secondPartOfSplitString[1])
 
-            })
-            break
-        default: pl.au(secondPartOfSplitString[0])
+    } else {
+        fail("unexpected null")
     }
 
     createBooleanTest(

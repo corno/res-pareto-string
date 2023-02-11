@@ -1,27 +1,17 @@
 import * as pt from 'pareto-core-types'
 
-import * as t from './types.generated'
+import { T   } from './types.generated'
 
 import * as mcommon from "glo-pareto-common"
 
-export type TSplitData = t.USplitData
+export type FLength = ($: mcommon.T.String,) => mcommon.T.Number
 
-export type TSplitIn2Result = t.USplitIn2Result
+export type FSplit = ($: T.SplitData,) => T.SplitResult
 
-export type TSplitResult = t.USplitResult
+export type FSplitIn2 = ($: T.SplitData,) => T.SplitIn2Result
 
-export type TStartsWithData = t.UStartsWithData
+export type FStartsWith = ($: T.StartsWithData,) => mcommon.T.Boolean
 
-export type TSubstrData = t.USubstrData
+export type FSubstr = ($: T.SubstrData,) => mcommon.T.String
 
-export type FLength = ($: mcommon.TString,) => mcommon.TNumber
-
-export type FSplit = ($: TSplitData,) => TSplitResult
-
-export type FSplitIn2 = ($: TSplitData,) => TSplitIn2Result
-
-export type FStartsWith = ($: TStartsWithData,) => mcommon.TBoolean
-
-export type FSubstr = ($: TSubstrData,) => mcommon.TString
-
-export type FTrimEnd = ($: mcommon.TString,) => mcommon.TString
+export type FTrimEnd = ($: mcommon.T.String,) => mcommon.T.String

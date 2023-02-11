@@ -2,50 +2,68 @@ import * as pt from 'pareto-core-types'
 
 import * as mcommon from "glo-pareto-common"
 
-export namespace VOptional {
+export namespace T {
     
-    export namespace Onot__set {}
-    export type Onot__set<AType> = {}
-}
-export type VOptional<AType> = 
-    | ['not set', VOptional.Onot__set<AType>]
-    | ['set', AType]
-
-export type MOptional<AType> = VOptional<AType>
-
-export namespace GSplitData {}
-export type GSplitData = {
-    readonly 'splitter': string
-    readonly 'value': string
-}
-export type USplitData = GSplitData
-
-export namespace GSplitIn2Result {
+    export namespace SplitData {
+        
+        export type splitter = string
+        
+        export type value = string
+    }
     
-    export namespace Psecond {}
-    export type Psecond = MOptional<string>
+    export type SplitData = {
+        readonly 'splitter': string
+        readonly 'value': string
+    }
+    
+    export namespace SplitIn2Result {
+        
+        export type first = string
+        
+        export namespace second {
+            
+            export type O = string
+        }
+        
+        export type second = [ false ] | [ true, string]
+    }
+    
+    export type SplitIn2Result = {
+        readonly 'first': string
+        readonly 'second': [ false ] | [ true, string]
+    }
+    
+    export namespace SplitResult {
+        
+        export type A = string
+    }
+    
+    export type SplitResult = pt.Array<string>
+    
+    export namespace StartsWithData {
+        
+        export type contextString = string
+        
+        export type searchString = string
+    }
+    
+    export type StartsWithData = {
+        readonly 'contextString': string
+        readonly 'searchString': string
+    }
+    
+    export namespace SubstrData {
+        
+        export type begin = number
+        
+        export type length = number
+        
+        export type value = string
+    }
+    
+    export type SubstrData = {
+        readonly 'begin': number
+        readonly 'length': number
+        readonly 'value': string
+    }
 }
-export type GSplitIn2Result = {
-    readonly 'first': string
-    readonly 'second': GSplitIn2Result.Psecond
-}
-export type USplitIn2Result = GSplitIn2Result
-
-export namespace GSplitResult {}
-export type GSplitResult = pt.Array<string>
-export type USplitResult = GSplitResult
-
-export namespace GStartsWithData {}
-export type GStartsWithData = {
-    readonly 'contextString': string
-    readonly 'searchString': string
-}
-export type UStartsWithData = GStartsWithData
-
-export namespace GSubstrData {}
-export type GSubstrData = {
-    readonly 'begin': number
-    readonly 'length': number
-    readonly 'value': string
-}
-export type USubstrData = GSubstrData

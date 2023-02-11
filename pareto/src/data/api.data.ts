@@ -8,7 +8,7 @@ import {
     interfaceReference,
     null_,
     method,
-    number, dictionary, group, member, taggedUnion, types, parameter, template, func, data,
+    number, dictionary, group, member, taggedUnion, types, func, data, type, optional,
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands.p"
 
 import { definitionReference, constructor, algorithm } from "lib-pareto-typescript-project/dist/submodules/moduleDefinition/shorthands.p"
@@ -17,42 +17,31 @@ import * as mmoduleDefinition from "lib-pareto-typescript-project/dist/submodule
 
 const d = pr.wrapRawDictionary
 
-export const $: mmoduleDefinition.TModuleDefinition = {
+export const $: mmoduleDefinition.T.ModuleDefinition = {
     'glossary': {
         'imports': d({
             "common": "glo-pareto-common",
         }),
         'parameters': d({}),
-        'templates': d({
-            "Optional": {
-                'parameters': d({ "Type": {}, }),
-                'type': taggedUnion({
-                    "set": parameter("Type"),
-                    "not set": group({}),
-                })
-            }
-        }),
-        'types': types({
-            "SplitData": group({
+        'types': d({
+            "SplitData": type(group({
                 "value": member(string()),
                 "splitter": member(string()),
-            }),
-            "SplitIn2Result": group({
+            })),
+            "SplitIn2Result": type(group({
                 "first": member(string()),
-                "second": member(template("Optional", {
-                    "Type": string(),
-                })),
-            }),
-            "SplitResult": array(string()),
-            "StartsWithData": group({
+                "second": member(optional(string())),
+            })),
+            "SplitResult": type(array(string())),
+            "StartsWithData": type(group({
                 "contextString": member(string()),
                 "searchString": member(string()),
-            }),
-            "SubstrData": group({
+            })),
+            "SubstrData": type(group({
                 "value": member(string()),
                 "begin": member(number()),
                 "length": member(number()),
-            }),
+            })),
         }),
         'interfaces': d({
         }),
