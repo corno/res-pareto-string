@@ -10,7 +10,7 @@ import * as pub from "../../../../../pub"
 
 export const $$: api.CgetTestSet = () => {
 
-    const builder = pm.createUnsafeDictionaryBuilder<mtest.TTestElement>()
+    const builder = pm.createUnsafeDictionaryBuilder<mtest.T.TestElement>()
     function createTest(name: string, expected: string, actual: string) {
         builder.add(name, {
             type: ["test", {
