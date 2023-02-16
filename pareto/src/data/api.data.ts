@@ -24,6 +24,7 @@ export const $: mmoduleDefinition.T.ModuleDefinition = {
         }),
         'parameters': d({}),
         'types': d({
+            "CharacterArray": type(array(number())),
             "SplitData": type(group({
                 "value": member(string()),
                 "splitter": member(string()),
@@ -47,6 +48,8 @@ export const $: mmoduleDefinition.T.ModuleDefinition = {
         }),
         'functions': d({
             "Substr": func(typeReference("SubstrData"), null, null, data(typeReference("common", "String"), false)),
+            "ToCharacterArray": func(typeReference("common", "String"), null, null, data(typeReference("CharacterArray"), false)),
+            "FromCharacterArray": func(typeReference("CharacterArray"), null, null, data(typeReference("common", "String"), false)),
             "Split": func(typeReference("SplitData"), null, null, data(typeReference("SplitResult"), false)),
             "SplitIn2": func(typeReference("SplitData"), null, null, data(typeReference("SplitIn2Result"), false)),
             "Length": func(typeReference("common", "String"), null, null, data(typeReference("common", "Number"), false)),
@@ -58,12 +61,14 @@ export const $: mmoduleDefinition.T.ModuleDefinition = {
         'imports': d({
         }),
         'algorithms': d({
+            "fromCharacterArray": algorithm(definitionReference("FromCharacterArray")),
+            "length": algorithm(definitionReference("Length")),
             "split": algorithm(definitionReference("Split")),
             "splitIn2": algorithm(definitionReference("SplitIn2")),
-            "length": algorithm(definitionReference("Length")),
-            "substr": algorithm(definitionReference("Substr")),
-            "trimEnd": algorithm(definitionReference("TrimEnd")),
             "startsWith": algorithm(definitionReference("StartsWith")),
+            "substr": algorithm(definitionReference("Substr")),
+            "toCharacterArray": algorithm(definitionReference("ToCharacterArray")),
+            "trimEnd": algorithm(definitionReference("TrimEnd")),
         })
     },
 }

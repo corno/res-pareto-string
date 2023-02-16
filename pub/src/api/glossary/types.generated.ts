@@ -4,6 +4,13 @@ import * as mcommon from "glo-pareto-common"
 
 export namespace T {
     
+    export namespace CharacterArray {
+        
+        export type A = number
+    }
+    
+    export type CharacterArray = pt.Array<number>
+    
     export namespace SplitData {
         
         export type splitter = string
