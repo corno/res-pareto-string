@@ -7,6 +7,8 @@ export type CfromCharacterArray = glo.FFromCharacterArray
 
 export type Clength = glo.FLength
 
+export type CreplaceAll = glo.FReplaceAll
+
 export type Csplit = glo.FSplit
 
 export type CsplitIn2 = glo.FSplitIn2
@@ -22,6 +24,7 @@ export type CtrimEnd = glo.FTrimEnd
 export type API = {
     fromCharacterArray: CfromCharacterArray
     length: Clength
+    replaceAll: CreplaceAll
     split: Csplit
     splitIn2: CsplitIn2
     startsWith: CstartsWith

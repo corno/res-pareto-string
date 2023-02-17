@@ -43,10 +43,16 @@ export const $: mmoduleDefinition.T.ModuleDefinition = {
                 "begin": member(number()),
                 "length": member(number()),
             })),
+            "ReplaceAllData": type(group({
+                "value": member(string()),
+                "pattern": member(string()),
+                "replacement": member(string()),
+            })),
         }),
         'interfaces': d({
         }),
         'functions': d({
+            "ReplaceAll": func(typeReference("ReplaceAllData"), null, null, data(typeReference("common", "String"), false)),
             "Substr": func(typeReference("SubstrData"), null, null, data(typeReference("common", "String"), false)),
             "ToCharacterArray": func(typeReference("common", "String"), null, null, data(typeReference("CharacterArray"), false)),
             "FromCharacterArray": func(typeReference("CharacterArray"), null, null, data(typeReference("common", "String"), false)),
@@ -63,6 +69,7 @@ export const $: mmoduleDefinition.T.ModuleDefinition = {
         'algorithms': d({
             "fromCharacterArray": algorithm(definitionReference("FromCharacterArray")),
             "length": algorithm(definitionReference("Length")),
+            "replaceAll": algorithm(definitionReference("ReplaceAll")),
             "split": algorithm(definitionReference("Split")),
             "splitIn2": algorithm(definitionReference("SplitIn2")),
             "startsWith": algorithm(definitionReference("StartsWith")),

@@ -8,6 +8,8 @@ export type FFromCharacterArray = ($: T.CharacterArray,) => mcommon.T.String
 
 export type FLength = ($: mcommon.T.String,) => mcommon.T.Number
 
+export type FReplaceAll = ($: T.ReplaceAllData,) => mcommon.T.String
+
 export type FSplit = ($: T.SplitData,) => T.SplitResult
 
 export type FSplitIn2 = ($: T.SplitData,) => T.SplitIn2Result

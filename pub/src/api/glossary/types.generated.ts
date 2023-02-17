@@ -11,6 +11,21 @@ export namespace T {
     
     export type CharacterArray = pt.Array<number>
     
+    export namespace ReplaceAllData {
+        
+        export type pattern = string
+        
+        export type replacement = string
+        
+        export type value = string
+    }
+    
+    export type ReplaceAllData = {
+        readonly 'pattern': string
+        readonly 'replacement': string
+        readonly 'value': string
+    }
+    
     export namespace SplitData {
         
         export type splitter = string

@@ -47,6 +47,13 @@ export const $$: api.CgetTestSet = () => {
         fail("unexpected null")
     }
 
+    const xxx = pub.$a.replaceAll({
+       'value': "a\"b\"c",
+        'pattern': "\"",
+        'replacement': "_",
+    })
+    createTest("replaceAll", "a_b_c", xxx)
+
     createBooleanTest(
         "startsWith",
         pub.$a.startsWith({
