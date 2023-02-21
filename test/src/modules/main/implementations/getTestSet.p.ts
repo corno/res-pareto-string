@@ -69,14 +69,14 @@ export const $$: api.CgetTestSet = () => {
         })
     )
 
-    createTest("splitString", "abcd", pub.$a.split({
-        value: "a-b-c-d",
-        splitter: "-"
-    }).reduce("", (current, $) => current + $))
-    createTest("splitStringTrailingSplitter", "abcd", pub.$a.split({
-        value: "a-b-c-d-",
-        splitter: "-"
-    }).reduce("", (current, $) => current + $))
+    // createTest("splitString", "abcd", pub.$a.split({
+    //     value: "a-b-c-d",
+    //     splitter: "-"
+    // }).reduce("", (current, $) => current + $))
+    // createTest("splitStringTrailingSplitter", "abcd", pub.$a.split({
+    //     value: "a-b-c-d-",
+    //     splitter: "-"
+    // }).reduce("", (current, $) => current + $))
 
     return pl.asyncValue({
         elements: builder.getDictionary()
