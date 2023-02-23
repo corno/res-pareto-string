@@ -1,5 +1,5 @@
-import * as api from "../api"
+import * as mapi from "../api"
 
-export const $$: api.Csubstr = ($) => {
+export const $$: mapi.Csubstr = ($) => {
     return $.value.substr($.begin, $.length)
 }

@@ -1,7 +1,6 @@
-import * as pi from "pareto-core-internals"
 
-import * as api from "../api"
+import * as mapi from "../api"
 
-export const $$: api.CreplaceAll = ($) => {
+export const $$: mapi.CreplaceAll = ($) => {
     return $.value.replace(new RegExp($.pattern, 'g'), $.replacement)
 }

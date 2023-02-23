@@ -1,8 +1,8 @@
 import * as pi from 'pareto-core-internals'
 
-import * as api from "../api"
+import * as mapi from "../api"
 
-export const $$: api.CtoCharacterArray = ($) => {
+export const $$: mapi.CtoCharacterArray = ($) => {
     const out: number[] = []
     for (let i = 0; i !== $.length; i += 1) {
         out.push($.charCodeAt(i))

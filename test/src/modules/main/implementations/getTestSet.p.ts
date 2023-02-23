@@ -1,20 +1,18 @@
 
-import * as pm from "pareto-core-state"
-import * as pl from "pareto-core-lib"
+import * as ps from 'pareto-core-state'
+import * as pa from 'pareto-core-async'
 
 import * as mtest from "lib-pareto-test"
+import * as mapi from "../api"
+import * as mpub from "../../../../../pub"
 
-import * as api from "../api"
+export const $$: mapi.CgetTestSet = () => {
 
-import * as pub from "../../../../../pub"
-
-export const $$: api.CgetTestSet = () => {
-
-    const builder = pm.createUnsafeDictionaryBuilder<mtest.T.TestElement>()
+    const builder = ps.createUnsafeDictionaryBuilder<mtest.T.TestElement>()
     function createTest(name: string, expected: string, actual: string) {
         builder.add(name, {
-            type: ["test", {
-                type: ["short string", {
+            'type': ['test', {
+                type: ['short string', {
                     expected: expected,
                     actual: actual,
                 }]
@@ -23,20 +21,20 @@ export const $$: api.CgetTestSet = () => {
     }
     function createBooleanTest(name: string, test: boolean) {
         builder.add(name, {
-            type: ["test", {
-                type: ["boolean", test]
+            'type': ['test', {
+                type: ['boolean', test]
             }]
         })
     }
     function fail(name: string) {
         builder.add(name, {
-            type: ["test", {
-                type: ["boolean", false]
+            'type': ['test', {
+                type: ['boolean', false]
             }]
         })
     }
 
-    const secondPartOfSplitString = pub.$a.splitIn2({
+    const secondPartOfSplitString = mpub.$a.splitIn2({
         value: "bar-foo",
         splitter: "-",
     }).second
@@ -47,7 +45,7 @@ export const $$: api.CgetTestSet = () => {
         fail("unexpected null")
     }
 
-    const xxx = pub.$a.replaceAll({
+    const xxx = mpub.$a.replaceAll({
        'value': "a\"b\"c",
         'pattern': "\"",
         'replacement': "_",
@@ -56,14 +54,14 @@ export const $$: api.CgetTestSet = () => {
 
     createBooleanTest(
         "startsWith",
-        pub.$a.startsWith({
+        mpub.$a.startsWith({
             contextString: "XBla",
             searchString: "X",
         })
     )
     createBooleanTest(
         "doesNotstartWith",
-        !pub.$a.startsWith({
+        !mpub.$a.startsWith({
             contextString: "YBla",
             searchString: "X",
         })
@@ -78,7 +76,7 @@ export const $$: api.CgetTestSet = () => {
     //     splitter: "-"
     // }).reduce("", (current, $) => current + $))
 
-    return pl.asyncValue({
+    return pa.asyncValue({
         elements: builder.getDictionary()
     })
 }

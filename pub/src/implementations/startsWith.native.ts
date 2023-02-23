@@ -1,5 +1,5 @@
-import * as api from "../api"
+import * as mapi from "../api"
 
-export const $$: api.CstartsWith = ($) => {
+export const $$: mapi.CstartsWith = ($) => {
     return $.contextString.startsWith($.searchString)
 }
