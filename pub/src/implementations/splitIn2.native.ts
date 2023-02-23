@@ -1,6 +1,8 @@
-import * as mapi from "../api"
 
-export const $$: mapi.CsplitIn2 = ($) => {
+
+import { CsplitIn2 } from "../api"
+
+export const $$:CsplitIn2 = ($) => {
     const position = $.value.indexOf($.splitter)
     if (position === -1) {
         return {

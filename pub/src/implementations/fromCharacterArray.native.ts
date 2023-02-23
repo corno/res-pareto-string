@@ -1,6 +1,8 @@
-import * as mapi from "../api"
 
-export const $$: mapi.CfromCharacterArray = ($) => {
+
+import { CfromCharacterArray } from "../api"
+
+export const $$:CfromCharacterArray = ($) => {
     let out = ""
     $.__forEach(($) => {
         out += String.fromCharCode($)

@@ -1,5 +1,7 @@
-import * as mapi from "../api"
 
-export const $$: mapi.Clength = ($) => {
+
+import { Clength } from "../api"
+
+export const $$:Clength = ($) => {
     return $.length
 }

@@ -1,6 +1,8 @@
 
-import * as mapi from "../api"
 
-export const $$: mapi.CreplaceAll = ($) => {
+
+import { CreplaceAll } from "../api"
+
+export const $$:CreplaceAll = ($) => {
     return $.value.replace(new RegExp($.pattern, 'g'), $.replacement)
 }

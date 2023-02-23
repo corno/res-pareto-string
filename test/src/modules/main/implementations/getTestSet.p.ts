@@ -2,13 +2,15 @@
 import * as ps from 'pareto-core-state'
 import * as pa from 'pareto-core-async'
 
-import * as mtest from "lib-pareto-test"
-import * as mapi from "../api"
-import * as mpub from "../../../../../pub"
+import * as gtest from "lib-pareto-test"
 
-export const $$: mapi.CgetTestSet = () => {
+import * as gpub from "../../../../../pub"
 
-    const builder = ps.createUnsafeDictionaryBuilder<mtest.T.TestElement>()
+import { CgetTestSet } from "../api"
+
+export const $$:CgetTestSet = () => {
+
+    const builder = ps.createUnsafeDictionaryBuilder<gtest.T.TestElement>()
     function createTest(name: string, expected: string, actual: string) {
         builder.add(name, {
             'type': ['test', {
@@ -34,7 +36,7 @@ export const $$: mapi.CgetTestSet = () => {
         })
     }
 
-    const secondPartOfSplitString = mpub.$a.splitIn2({
+    const secondPartOfSplitString = gpub.$a.splitIn2({
         value: "bar-foo",
         splitter: "-",
     }).second
@@ -45,7 +47,7 @@ export const $$: mapi.CgetTestSet = () => {
         fail("unexpected null")
     }
 
-    const xxx = mpub.$a.replaceAll({
+    const xxx = gpub.$a.replaceAll({
        'value': "a\"b\"c",
         'pattern': "\"",
         'replacement': "_",
@@ -54,14 +56,14 @@ export const $$: mapi.CgetTestSet = () => {
 
     createBooleanTest(
         "startsWith",
-        mpub.$a.startsWith({
+        gpub.$a.startsWith({
             contextString: "XBla",
             searchString: "X",
         })
     )
     createBooleanTest(
         "doesNotstartWith",
-        !mpub.$a.startsWith({
+        !gpub.$a.startsWith({
             contextString: "YBla",
             searchString: "X",
         })
