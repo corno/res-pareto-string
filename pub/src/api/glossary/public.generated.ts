@@ -2,22 +2,22 @@ import * as pt from 'pareto-core-types'
 
 import { T   } from './types.generated'
 
-import * as mcommon from "glo-pareto-common"
+import * as gcommon from "glo-pareto-common"
 
-export type FFromCharacterArray = ($: T.CharacterArray,) => mcommon.T.String
+export type FFromCharacterArray = ($: T.CharacterArray,) => gcommon.T.String
 
-export type FLength = ($: mcommon.T.String,) => mcommon.T.Number
+export type FLength = ($: gcommon.T.String,) => gcommon.T.Number
 
-export type FReplaceAll = ($: T.ReplaceAllData,) => mcommon.T.String
+export type FReplaceAll = ($: T.ReplaceAllData,) => gcommon.T.String
 
 export type FSplit = ($: T.SplitData,) => T.SplitResult
 
 export type FSplitIn2 = ($: T.SplitData,) => T.SplitIn2Result
 
-export type FStartsWith = ($: T.StartsWithData,) => mcommon.T.Boolean
+export type FStartsWith = ($: T.StartsWithData,) => gcommon.T.Boolean
 
-export type FSubstr = ($: T.SubstrData,) => mcommon.T.String
+export type FSubstr = ($: T.SubstrData,) => gcommon.T.String
 
-export type FToCharacterArray = ($: mcommon.T.String,) => T.CharacterArray
+export type FToCharacterArray = ($: gcommon.T.String,) => T.CharacterArray
 
-export type FTrimEnd = ($: mcommon.T.String,) => mcommon.T.String
+export type FTrimEnd = ($: gcommon.T.String,) => gcommon.T.String
