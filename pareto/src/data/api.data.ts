@@ -1,81 +1,23 @@
 import * as pd from 'pareto-core-data'
 
-import {
-    string,
-    nested,
-    array,
-    typeReference,
-    interfaceReference,
-    null_,
-    method,
-    number, dictionary, group, member, taggedUnion, types, func, data, type, optional,
-} from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
+import { functionReference, constructor, algorithm, typeReference } from "lib-pareto-typescript-project/dist/submodules/api/shorthands"
 
-import { definitionReference, constructor, algorithm } from "lib-pareto-typescript-project/dist/submodules/moduleDefinition/shorthands"
-
-import * as gmoduleDefinition from "lib-pareto-typescript-project/dist/submodules/moduleDefinition"
-
+import * as gapi from "lib-pareto-typescript-project/dist/submodules/api"
 const d = pd.d
 
-export const $: gmoduleDefinition.T.ModuleDefinition<pd.SourceLocation> = {
-    'glossary': {
-        'imports': d({
-            "common": "glo-pareto-common",
-        }),
-        'parameters': d({}),
-        'types': d({
-            "CharacterArray": type(array(number())),
-            "SplitData": type(group({
-                "value": member(string()),
-                "splitter": member(string()),
-            })),
-            "SplitIn2Result": type(group({
-                "first": member(string()),
-                "second": member(optional(string())),
-            })),
-            "SplitResult": type(array(string())),
-            "StartsWithData": type(group({
-                "contextString": member(string()),
-                "searchString": member(string()),
-            })),
-            "SubstrData": type(group({
-                "value": member(string()),
-                "begin": member(number()),
-                "length": member(number()),
-            })),
-            "ReplaceAllData": type(group({
-                "value": member(string()),
-                "pattern": member(string()),
-                "replacement": member(string()),
-            })),
-        }),
-        'interfaces': d({
-        }),
-        'functions': d({
-            "ReplaceAll": func(typeReference("ReplaceAllData"), null, null, data(typeReference("common", "String"), false)),
-            "Substr": func(typeReference("SubstrData"), null, null, data(typeReference("common", "String"), false)),
-            "ToCharacterArray": func(typeReference("common", "String"), null, null, data(typeReference("CharacterArray"), false)),
-            "FromCharacterArray": func(typeReference("CharacterArray"), null, null, data(typeReference("common", "String"), false)),
-            "Split": func(typeReference("SplitData"), null, null, data(typeReference("SplitResult"), false)),
-            "SplitIn2": func(typeReference("SplitData"), null, null, data(typeReference("SplitIn2Result"), false)),
-            "Length": func(typeReference("common", "String"), null, null, data(typeReference("common", "Number"), false)),
-            "TrimEnd": func(typeReference("common", "String"), null, null, data(typeReference("common", "String"), false)),
-            "StartsWith": func(typeReference("StartsWithData"), null, null, data(typeReference("common", "Boolean"), false)),
-        }),
-    },
-    'api': {
-        'imports': d({
-        }),
-        'algorithms': d({
-            "fromCharacterArray": algorithm(definitionReference("FromCharacterArray")),
-            "length": algorithm(definitionReference("Length")),
-            "replaceAll": algorithm(definitionReference("ReplaceAll")),
-            "split": algorithm(definitionReference("Split")),
-            "splitIn2": algorithm(definitionReference("SplitIn2")),
-            "startsWith": algorithm(definitionReference("StartsWith")),
-            "substr": algorithm(definitionReference("Substr")),
-            "toCharacterArray": algorithm(definitionReference("ToCharacterArray")),
-            "trimEnd": algorithm(definitionReference("TrimEnd")),
-        })
-    },
+export const $: gapi.T.API<pd.SourceLocation> =  {
+    'imports': d({
+        "this": "./glossary",
+    }),
+    'algorithms': d({
+        "fromCharacterArray": algorithm(functionReference("this", {}, "FromCharacterArray")),
+        "length": algorithm(functionReference("this", {}, "Length")),
+        "replaceAll": algorithm(functionReference("this", {}, "ReplaceAll")),
+        "split": algorithm(functionReference("this", {}, "Split")),
+        "splitIn2": algorithm(functionReference("this", {}, "SplitIn2")),
+        "startsWith": algorithm(functionReference("this", {}, "StartsWith")),
+        "substr": algorithm(functionReference("this", {}, "Substr")),
+        "toCharacterArray": algorithm(functionReference("this", {}, "ToCharacterArray")),
+        "trimEnd": algorithm(functionReference("this", {}, "TrimEnd")),
+    })
 }

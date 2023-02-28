@@ -1,25 +1,24 @@
 import * as pt from 'pareto-core-types'
 
-import * as gglo from "./glossary"
+import * as gthis from "./glossary"
 
+export type CfromCharacterArray = gthis.FFromCharacterArray
 
-export type CfromCharacterArray = gglo.FFromCharacterArray
+export type Clength = gthis.FLength
 
-export type Clength = gglo.FLength
+export type CreplaceAll = gthis.FReplaceAll
 
-export type CreplaceAll = gglo.FReplaceAll
+export type Csplit = gthis.FSplit
 
-export type Csplit = gglo.FSplit
+export type CsplitIn2 = gthis.FSplitIn2
 
-export type CsplitIn2 = gglo.FSplitIn2
+export type CstartsWith = gthis.FStartsWith
 
-export type CstartsWith = gglo.FStartsWith
+export type Csubstr = gthis.FSubstr
 
-export type Csubstr = gglo.FSubstr
+export type CtoCharacterArray = gthis.FToCharacterArray
 
-export type CtoCharacterArray = gglo.FToCharacterArray
-
-export type CtrimEnd = gglo.FTrimEnd
+export type CtrimEnd = gthis.FTrimEnd
 
 export type API = {
     fromCharacterArray: CfromCharacterArray
