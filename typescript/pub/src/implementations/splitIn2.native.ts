@@ -1,6 +1,6 @@
 
 
-import { CsplitIn2 } from "../api"
+import { CsplitIn2 } from "../definition/api.generated"
 
 export const $$:CsplitIn2 = ($) => {
     const position = $.value.indexOf($.splitter)

@@ -1,6 +1,6 @@
 
 
-import { CfromCharacterArray } from "../api"
+import { CfromCharacterArray } from "../definition/api.generated"
 
 export const $$:CfromCharacterArray = ($) => {
     let out = ""
