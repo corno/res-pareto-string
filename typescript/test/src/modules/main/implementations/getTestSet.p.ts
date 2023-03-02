@@ -36,7 +36,7 @@ export const $$:CgetTestSet = () => {
         })
     }
 
-    const secondPartOfSplitString = gpub.$a.splitIn2({
+    const secondPartOfSplitString = gpub.$r.splitIn2({
         value: "bar-foo",
         splitter: "-",
     }).second
@@ -47,7 +47,7 @@ export const $$:CgetTestSet = () => {
         fail("unexpected null")
     }
 
-    const xxx = gpub.$a.replaceAll({
+    const xxx = gpub.$r.replaceAll({
        'value': "a\"b\"c",
         'pattern': "\"",
         'replacement': "_",
@@ -56,24 +56,24 @@ export const $$:CgetTestSet = () => {
 
     createBooleanTest(
         "startsWith",
-        gpub.$a.startsWith({
+        gpub.$r.startsWith({
             contextString: "XBla",
             searchString: "X",
         })
     )
     createBooleanTest(
         "doesNotstartWith",
-        !gpub.$a.startsWith({
+        !gpub.$r.startsWith({
             contextString: "YBla",
             searchString: "X",
         })
     )
 
-    // createTest("splitString", "abcd", pub.$a.split({
+    // createTest("splitString", "abcd", pub.$r.split({
     //     value: "a-b-c-d",
     //     splitter: "-"
     // }).reduce("", (current, $) => current + $))
-    // createTest("splitStringTrailingSplitter", "abcd", pub.$a.split({
+    // createTest("splitStringTrailingSplitter", "abcd", pub.$r.split({
     //     value: "a-b-c-d-",
     //     splitter: "-"
     // }).reduce("", (current, $) => current + $))
