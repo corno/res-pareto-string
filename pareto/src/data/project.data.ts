@@ -1,5 +1,7 @@
 import * as pd from 'pareto-core-data'
 
+import { external, this_ } from "lib-pareto-typescript-project/dist/submodules/project/shorthands"
+
 import * as gproject from "lib-pareto-typescript-project/dist/submodules/project"
 
 const d = pd.d
@@ -11,14 +13,24 @@ export const $: gproject.T.Project<pd.SourceLocation> = {
     'author': "Corno",
     'description': "a pareto wrapper around basic string operations as Pareto lacks them (yes, really, by design, the idea is to find a way how not to need them, and if you really do, then use this library)",
     'license': "TBD",
-    
+
     'dependencies': d({
         "glo-pareto-common": null,
     }),
     'type': ['resource', {
         'definition': {
-            'glossary': glossary,
-            'api': api,
+            'glossary': {
+                'root': glossary,
+                'imports': d({
+                    "common": external("glo-pareto-common"),
+                }),
+            },
+            'api': {
+                'root': api,
+                'imports': d({
+                    "this": this_(),
+                }),
+            },
         },
         'nativeDependencies': d({
 
@@ -30,11 +42,11 @@ export const $: gproject.T.Project<pd.SourceLocation> = {
             }),
             'glossary': {
                 'functions': d({}),
-                'imports': d({}),
                 'parameters': d({}),
                 'types': d({}),
                 'interfaces': d({}),
             },
+            'imports': d({}),
         }
     }],
 }
