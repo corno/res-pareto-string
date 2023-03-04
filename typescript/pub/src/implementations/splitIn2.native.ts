@@ -1,8 +1,8 @@
 
 
-import { CsplitIn2 } from "../definition/api.generated"
+import { splitIn2 } from "../definition/api.generated"
 
-export const $$:CsplitIn2 = ($) => {
+export const $$:splitIn2 = ($) => {
     const position = $.value.indexOf($.splitter)
     if (position === -1) {
         return {

@@ -1,7 +1,7 @@
 
 
-import { Clength } from "../definition/api.generated"
+import { length } from "../definition/api.generated"
 
-export const $$:Clength = ($) => {
+export const $$:length = ($) => {
     return $.length
 }

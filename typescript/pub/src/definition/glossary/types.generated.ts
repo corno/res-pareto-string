@@ -1,12 +1,12 @@
 import * as pt from 'pareto-core-types'
 
-import * as gcommon from "glo-pareto-common"
+import * as g_common from "glo-pareto-common"
 
 export namespace T {
     
     export namespace CharacterArray {
         
-        export type A = number
+        export type T = number
     }
     
     export type CharacterArray = pt.Array<number>
@@ -57,7 +57,7 @@ export namespace T {
     
     export namespace SplitResult {
         
-        export type A = string
+        export type T = string
     }
     
     export type SplitResult = pt.Array<string>

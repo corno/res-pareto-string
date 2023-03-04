@@ -45,6 +45,8 @@ export const $: gglossary.T.Glossary<pd.SourceLocation> = {
             "replacement": member(string()),
         })),
     }),
+    'builders': d({
+    }),
     'interfaces': d({
     }),
     'functions': d({

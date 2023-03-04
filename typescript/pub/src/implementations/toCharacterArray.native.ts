@@ -2,9 +2,9 @@ import * as pi from 'pareto-core-internals'
 
 
 
-import { CtoCharacterArray } from "../definition/api.generated"
+import { toCharacterArray } from "../definition/api.generated"
 
-export const $$:CtoCharacterArray = ($) => {
+export const $$:toCharacterArray = ($) => {
     const out: number[] = []
     for (let i = 0; i !== $.length; i += 1) {
         out.push($.charCodeAt(i))

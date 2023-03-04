@@ -1,7 +1,7 @@
 
 
-import { Csubstr } from "../definition/api.generated"
+import { substr } from "../definition/api.generated"
 
-export const $$:Csubstr = ($) => {
+export const $$:substr = ($) => {
     return $.value.substr($.begin, $.length)
 }
