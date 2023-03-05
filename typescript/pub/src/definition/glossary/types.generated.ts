@@ -6,7 +6,7 @@ export namespace T {
     
     export namespace CharacterArray {
         
-        export type T = number
+        export type A = number
     }
     
     export type CharacterArray = pt.Array<number>
@@ -57,7 +57,7 @@ export namespace T {
     
     export namespace SplitResult {
         
-        export type T = string
+        export type A = string
     }
     
     export type SplitResult = pt.Array<string>

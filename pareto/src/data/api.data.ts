@@ -16,5 +16,5 @@ export const $: gapi.T.API<pd.SourceLocation> =  {
         "substr": algorithm(functionReference("this", {}, "Substr")),
         "toCharacterArray": algorithm(functionReference("this", {}, "ToCharacterArray")),
         "trimEnd": algorithm(functionReference("this", {}, "TrimEnd")),
-    })
+    }),
 }
