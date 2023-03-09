@@ -1,6 +1,6 @@
 
 
-import { length } from "../definition/api.generated"
+import { length } from "../api.generated"
 
 export const $$:length = ($) => {
     return $.length

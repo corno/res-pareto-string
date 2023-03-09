@@ -2,7 +2,7 @@ import * as pi from 'pareto-core-internals'
 
 
 
-import { toCharacterArray } from "../definition/api.generated"
+import { toCharacterArray } from "../api.generated"
 
 export const $$:toCharacterArray = ($) => {
     const out: number[] = []

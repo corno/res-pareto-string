@@ -1,4 +1,4 @@
-import { API } from "./definition/api.generated"
+import { API } from "./api.generated"
 import { $$ as ifromCharacterArray } from "./implementations/fromCharacterArray.native"
 import { $$ as ilength } from "./implementations/length.native"
 import { $$ as ireplaceAll } from "./implementations/replaceAll.native"

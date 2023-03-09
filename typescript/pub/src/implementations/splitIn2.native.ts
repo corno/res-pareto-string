@@ -1,6 +1,6 @@
 
 
-import { splitIn2 } from "../definition/api.generated"
+import { splitIn2 } from "../api.generated"
 
 export const $$:splitIn2 = ($) => {
     const position = $.value.indexOf($.splitter)

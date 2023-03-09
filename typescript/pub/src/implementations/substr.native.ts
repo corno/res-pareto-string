@@ -1,6 +1,6 @@
 
 
-import { substr } from "../definition/api.generated"
+import { substr } from "../api.generated"
 
 export const $$:substr = ($) => {
     return $.value.substr($.begin, $.length)
