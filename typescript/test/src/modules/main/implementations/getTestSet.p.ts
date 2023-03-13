@@ -2,15 +2,15 @@
 import * as ps from 'pareto-core-state'
 import * as pa from 'pareto-core-async'
 
-import * as gtest from "lib-pareto-test"
+import * as g_test from "lib-pareto-test"
 
-import * as gpub from "../../../../../pub"
+import * as g_pub from "../../../../../pub"
 
 import { getTestSet } from "../api.generated"
 
 export const $$:getTestSet = () => {
 
-    const builder = ps.createUnsafeDictionaryBuilder<gtest.T.TestElement>()
+    const builder = ps.createUnsafeDictionaryBuilder<g_test.T.TestElement>()
     function createTest(name: string, expected: string, actual: string) {
         builder.add(name, {
             'type': ['test', {
@@ -36,7 +36,7 @@ export const $$:getTestSet = () => {
         })
     }
 
-    const secondPartOfSplitString = gpub.$r.splitIn2({
+    const secondPartOfSplitString = g_pub.$r.splitIn2({
         value: "bar-foo",
         splitter: "-",
     }).second
@@ -47,7 +47,7 @@ export const $$:getTestSet = () => {
         fail("unexpected null")
     }
 
-    const xxx = gpub.$r.replaceAll({
+    const xxx = g_pub.$r.replaceAll({
        'value': "a\"b\"c",
         'pattern': "\"",
         'replacement': "_",
@@ -56,14 +56,14 @@ export const $$:getTestSet = () => {
 
     createBooleanTest(
         "startsWith",
-        gpub.$r.startsWith({
+        g_pub.$r.startsWith({
             contextString: "XBla",
             searchString: "X",
         })
     )
     createBooleanTest(
         "doesNotstartWith",
-        !gpub.$r.startsWith({
+        !g_pub.$r.startsWith({
             contextString: "YBla",
             searchString: "X",
         })

@@ -7,18 +7,23 @@ import {
     dictionary, member, taggedUnion, types, group,
     array,
     typeReference,
-    data,
-    func,
+    sdata,
+    sfunc,
     type,
     optional,
     number,
+    imp,
+    externalTypeReference,
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
 
-import * as gglossary from "lib-pareto-typescript-project/dist/submodules/glossary"
+import * as g_glossary from "lib-pareto-typescript-project/dist/submodules/glossary"
 const d = pd.d
 
-export const $: gglossary.T.Glossary<pd.SourceLocation> = {
+export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     'parameters': d({}),
+    'imports': d({
+        "common": imp({}),
+    }),
     'types': d({
         "CharacterArray": type(array(number())),
         "SplitData": type(group({
@@ -45,19 +50,20 @@ export const $: gglossary.T.Glossary<pd.SourceLocation> = {
             "replacement": member(string()),
         })),
     }),
-    'builders': d({
-    }),
-    'interfaces': d({
-    }),
-    'functions': d({
-        "ReplaceAll": func(typeReference("ReplaceAllData"), null, null, data(typeReference("common", "String"), false)),
-        "Substr": func(typeReference("SubstrData"), null, null, data(typeReference("common", "String"), false)),
-        "ToCharacterArray": func(typeReference("common", "String"), null, null, data(typeReference("CharacterArray"), false)),
-        "FromCharacterArray": func(typeReference("CharacterArray"), null, null, data(typeReference("common", "String"), false)),
-        "Split": func(typeReference("SplitData"), null, null, data(typeReference("SplitResult"), false)),
-        "SplitIn2": func(typeReference("SplitData"), null, null, data(typeReference("SplitIn2Result"), false)),
-        "Length": func(typeReference("common", "String"), null, null, data(typeReference("common", "Number"), false)),
-        "TrimEnd": func(typeReference("common", "String"), null, null, data(typeReference("common", "String"), false)),
-        "StartsWith": func(typeReference("StartsWithData"), null, null, data(typeReference("common", "Boolean"), false)),
-    }),
+    'type': ['synchronous', {
+        'builders': d({
+        }),
+        'functions': d({
+            "ReplaceAll": sfunc(typeReference("ReplaceAllData"), null, null, sdata(externalTypeReference("common", "String"))),
+            "Substr": sfunc(typeReference("SubstrData"), null, null, sdata(externalTypeReference("common", "String"))),
+            "ToCharacterArray": sfunc(externalTypeReference("common", "String"), null, null, sdata(typeReference("CharacterArray"))),
+            "FromCharacterArray": sfunc(typeReference("CharacterArray"), null, null, sdata(externalTypeReference("common", "String"))),
+            "Split": sfunc(typeReference("SplitData"), null, null, sdata(typeReference("SplitResult"))),
+            "SplitIn2": sfunc(typeReference("SplitData"), null, null, sdata(typeReference("SplitIn2Result"))),
+            "Length": sfunc(externalTypeReference("common", "String"), null, null, sdata(externalTypeReference("common", "Number"))),
+            "TrimEnd": sfunc(externalTypeReference("common", "String"), null, null, sdata(externalTypeReference("common", "String"))),
+            "StartsWith": sfunc(typeReference("StartsWithData"), null, null, sdata(externalTypeReference("common", "Boolean"))),
+        }),
+
+    }],
 }
