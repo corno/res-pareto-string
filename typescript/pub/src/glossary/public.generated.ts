@@ -6,6 +6,8 @@ import * as g_common from "glo-pareto-common"
 
 export namespace B {}
 
+export namespace C {}
+
 export namespace F {
     
     export type FromCharacterArray = ($: T.CharacterArray) => g_common.T.String
