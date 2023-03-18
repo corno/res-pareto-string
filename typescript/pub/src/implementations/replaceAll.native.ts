@@ -1,8 +1,8 @@
 
 
 
-import { replaceAll } from "../api.generated"
+import { A } from "../api.generated"
 
-export const $$:replaceAll = ($) => {
+export const $$: A.replaceAll = ($) => {
     return $.value.replace(new RegExp($.pattern, 'g'), $.replacement)
 }

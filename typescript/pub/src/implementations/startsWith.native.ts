@@ -1,7 +1,7 @@
 
 
-import { startsWith } from "../api.generated"
+import { A } from "../api.generated"
 
-export const $$:startsWith = ($) => {
+export const $$: A.startsWith = ($) => {
     return $.contextString.startsWith($.searchString)
 }

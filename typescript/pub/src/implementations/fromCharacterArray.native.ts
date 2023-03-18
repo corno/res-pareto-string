@@ -1,8 +1,8 @@
 
 
-import { fromCharacterArray } from "../api.generated"
+import { A } from "../api.generated"
 
-export const $$:fromCharacterArray = ($) => {
+export const $$: A.fromCharacterArray = ($) => {
     let out = ""
     $.__forEach(($) => {
         out += String.fromCharCode($)

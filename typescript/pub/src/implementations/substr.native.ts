@@ -1,7 +1,7 @@
 
 
-import { substr } from "../api.generated"
+import { A } from "../api.generated"
 
-export const $$:substr = ($) => {
+export const $$: A.substr = ($) => {
     return $.value.substr($.begin, $.length)
 }

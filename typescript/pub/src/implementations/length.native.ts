@@ -1,7 +1,7 @@
 
 
-import { length } from "../api.generated"
+import { A } from "../api.generated"
 
-export const $$:length = ($) => {
+export const $$: A.length = ($) => {
     return $.length
 }

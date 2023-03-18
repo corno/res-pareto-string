@@ -2,8 +2,8 @@ import * as pi from 'pareto-core-internals'
 
 
 
-import { split } from "../api.generated"
+import { A } from "../api.generated"
 
-export const $$:split = ($) => {
+export const $$: A.split = ($) => {
     return pi.wrapRawArray($.value.split($.splitter))
 }

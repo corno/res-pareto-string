@@ -1,8 +1,8 @@
 
 
-import { splitIn2 } from "../api.generated"
+import { A } from "../api.generated"
 
-export const $$:splitIn2 = ($) => {
+export const $$: A.splitIn2 = ($) => {
     const position = $.value.indexOf($.splitter)
     if (position === -1) {
         return {

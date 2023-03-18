@@ -1,22 +1,11 @@
 import * as pd from 'pareto-core-data'
 
 import {
-    string,
-    null_,
-    nested,
-    dictionary, member, taggedUnion, types, group,
-    array,
-    typeReference,
-    sdata,
-    sfunc,
-    type,
-    optional,
-    number,
-    imp,
-    externalTypeReference,
+    array, data, externalTypeReference, group, imp, member, number, optional, sfunction, string, type, typeReference
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
 
 import * as g_glossary from "lib-pareto-typescript-project/dist/submodules/glossary"
+
 const d = pd.d
 
 export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
@@ -50,20 +39,24 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
             "replacement": member(string()),
         })),
     }),
-    'type': ['synchronous', {
-        'builders': d({
-        }),
+    'asynchronous': {
+        'interfaces': d({}),
+        'constructors': d({}),
+        'functions': d({}),
+    },
+    'synchronous': {
+        'interfaces': d({}),
+        'constructors': d({}),
         'functions': d({
-            "ReplaceAll": sfunc(sdata(typeReference("ReplaceAllData")), sdata(externalTypeReference("common", "String"))),
-            "Substr": sfunc(sdata(typeReference("SubstrData")), sdata(externalTypeReference("common", "String"))),
-            "ToCharacterArray": sfunc(sdata(externalTypeReference("common", "String")), sdata(typeReference("CharacterArray"))),
-            "FromCharacterArray": sfunc(sdata(typeReference("CharacterArray")), sdata(externalTypeReference("common", "String"))),
-            "Split": sfunc(sdata(typeReference("SplitData")), sdata(typeReference("SplitResult"))),
-            "SplitIn2": sfunc(sdata(typeReference("SplitData")), sdata(typeReference("SplitIn2Result"))),
-            "Length": sfunc(sdata(externalTypeReference("common", "String")), sdata(externalTypeReference("common", "Number"))),
-            "TrimEnd": sfunc(sdata(externalTypeReference("common", "String")), sdata(externalTypeReference("common", "String"))),
-            "StartsWith": sfunc(sdata(typeReference("StartsWithData")), sdata(externalTypeReference("common", "Boolean"))),
+            "ReplaceAll": sfunction(data(typeReference("ReplaceAllData")), externalTypeReference("common", "String")),
+            "Substr": sfunction(data(typeReference("SubstrData")), externalTypeReference("common", "String")),
+            "ToCharacterArray": sfunction(data(externalTypeReference("common", "String")), typeReference("CharacterArray")),
+            "FromCharacterArray": sfunction(data(typeReference("CharacterArray")), externalTypeReference("common", "String")),
+            "Split": sfunction(data(typeReference("SplitData")), typeReference("SplitResult")),
+            "SplitIn2": sfunction(data(typeReference("SplitData")), typeReference("SplitIn2Result")),
+            "Length": sfunction(data(externalTypeReference("common", "String")), externalTypeReference("common", "Number")),
+            "TrimEnd": sfunction(data(externalTypeReference("common", "String")), externalTypeReference("common", "String")),
+            "StartsWith": sfunction(data(typeReference("StartsWithData")), externalTypeReference("common", "Boolean")),
         }),
-
-    }],
+    },
 }
