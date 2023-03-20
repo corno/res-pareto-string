@@ -41,22 +41,21 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     }),
     'asynchronous': {
         'interfaces': d({}),
-        'constructors': d({}),
-        'functions': d({}),
+        'algorithms': d({}),
+        
     },
     'synchronous': {
         'interfaces': d({}),
-        'constructors': d({}),
-        'functions': d({
-            "ReplaceAll": sfunction(data(typeReference("ReplaceAllData")), externalTypeReference("common", "String")),
-            "Substr": sfunction(data(typeReference("SubstrData")), externalTypeReference("common", "String")),
-            "ToCharacterArray": sfunction(data(externalTypeReference("common", "String")), typeReference("CharacterArray")),
-            "FromCharacterArray": sfunction(data(typeReference("CharacterArray")), externalTypeReference("common", "String")),
-            "Split": sfunction(data(typeReference("SplitData")), typeReference("SplitResult")),
-            "SplitIn2": sfunction(data(typeReference("SplitData")), typeReference("SplitIn2Result")),
-            "Length": sfunction(data(externalTypeReference("common", "String")), externalTypeReference("common", "Number")),
-            "TrimEnd": sfunction(data(externalTypeReference("common", "String")), externalTypeReference("common", "String")),
-            "StartsWith": sfunction(data(typeReference("StartsWithData")), externalTypeReference("common", "Boolean")),
+        'algorithms': d({
+            "ReplaceAll": sfunction(externalTypeReference("common", "String"), data(typeReference("ReplaceAllData"))),
+            "Substr": sfunction(externalTypeReference("common", "String"), data(typeReference("SubstrData"))),
+            "ToCharacterArray": sfunction(typeReference("CharacterArray"), data(externalTypeReference("common", "String"))),
+            "FromCharacterArray": sfunction(externalTypeReference("common", "String"), data(typeReference("CharacterArray"))),
+            "Split": sfunction(typeReference("SplitResult"), data(typeReference("SplitData"))),
+            "SplitIn2": sfunction(typeReference("SplitIn2Result"), data(typeReference("SplitData"))),
+            "Length": sfunction(externalTypeReference("common", "Number"), data(externalTypeReference("common", "String"))),
+            "TrimEnd": sfunction(externalTypeReference("common", "String"), data(externalTypeReference("common", "String"))),
+            "StartsWith": sfunction(externalTypeReference("common", "Boolean"), data(typeReference("StartsWithData"))),
         }),
     },
 }
