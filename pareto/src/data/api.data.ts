@@ -7,14 +7,14 @@ const d = pd.d
 
 export const $: g_project.T.ModuleDefinition.api.root<pd.SourceLocation> =  {
     'algorithms': d({
-        "fromCharacterArray": algorithm(sfunction("this", {}, "FromCharacterArray")),
-        "length": algorithm(sfunction("this", {}, "Length")),
-        "replaceAll": algorithm(sfunction("this", {}, "ReplaceAll")),
-        "split": algorithm(sfunction("this", {}, "Split")),
-        "splitIn2": algorithm(sfunction("this", {}, "SplitIn2")),
-        "startsWith": algorithm(sfunction("this", {}, "StartsWith")),
-        "substr": algorithm(sfunction("this", {}, "Substr")),
-        "toCharacterArray": algorithm(sfunction("this", {}, "ToCharacterArray")),
-        "trimEnd": algorithm(sfunction("this", {}, "TrimEnd")),
+        "fromCharacterArray": algorithm(sfunction("this", {}, "FromCharacterArray"), {}),
+        "length": algorithm(sfunction("this", {}, "Length"), {}),
+        "replaceAll": algorithm(sfunction("this", {}, "ReplaceAll"), {}),
+        "split": algorithm(sfunction("this", {}, "Split"), {}),
+        "splitIn2": algorithm(sfunction("this", {}, "SplitIn2"), {}),
+        "startsWith": algorithm(sfunction("this", {}, "StartsWith"), {}),
+        "substr": algorithm(sfunction("this", {}, "Substr"), {}),
+        "toCharacterArray": algorithm(sfunction("this", {}, "ToCharacterArray"), {}),
+        "trimEnd": algorithm(sfunction("this", {}, "TrimEnd"), {}),
     }),
 }

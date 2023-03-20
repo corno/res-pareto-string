@@ -2,6 +2,8 @@
 
 import { A } from "../api.generated"
 
-export const $$: A.length = ($) => {
-    return $.length
+export const $$: A.length = () => {
+    return ($) => {
+        return $.length
+    }
 }

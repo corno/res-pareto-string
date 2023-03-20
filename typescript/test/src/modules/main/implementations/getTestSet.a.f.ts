@@ -36,7 +36,7 @@ export const $$:getTestSet = () => {
         })
     }
 
-    const secondPartOfSplitString = g_pub.$r.splitIn2({
+    const secondPartOfSplitString = g_pub.$r.splitIn2()({
         value: "bar-foo",
         splitter: "-",
     }).second
@@ -47,7 +47,7 @@ export const $$:getTestSet = () => {
         fail("unexpected null")
     }
 
-    const xxx = g_pub.$r.replaceAll({
+    const xxx = g_pub.$r.replaceAll()({
        'value': "a\"b\"c",
         'pattern': "\"",
         'replacement': "_",
@@ -56,14 +56,14 @@ export const $$:getTestSet = () => {
 
     createBooleanTest(
         "startsWith",
-        g_pub.$r.startsWith({
+        g_pub.$r.startsWith()({
             contextString: "XBla",
             searchString: "X",
         })
     )
     createBooleanTest(
         "doesNotstartWith",
-        !g_pub.$r.startsWith({
+        !g_pub.$r.startsWith()({
             contextString: "YBla",
             searchString: "X",
         })

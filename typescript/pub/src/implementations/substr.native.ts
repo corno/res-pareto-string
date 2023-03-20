@@ -2,6 +2,8 @@
 
 import { A } from "../api.generated"
 
-export const $$: A.substr = ($) => {
-    return $.value.substr($.begin, $.length)
+export const $$: A.substr = () => {
+    return ($) => {
+        return $.value.substr($.begin, $.length)
+    }
 }
