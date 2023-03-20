@@ -24,13 +24,13 @@ export namespace A {
 }
 
 export type API = {
-    fromCharacterArray: A.fromCharacterArray
-    length: A.length
-    replaceAll: A.replaceAll
-    split: A.split
-    splitIn2: A.splitIn2
-    startsWith: A.startsWith
-    substr: A.substr
-    toCharacterArray: A.toCharacterArray
-    trimEnd: A.trimEnd
+    readonly 'fromCharacterArray': A.fromCharacterArray
+    readonly 'length': A.length
+    readonly 'replaceAll': A.replaceAll
+    readonly 'split': A.split
+    readonly 'splitIn2': A.splitIn2
+    readonly 'startsWith': A.startsWith
+    readonly 'substr': A.substr
+    readonly 'toCharacterArray': A.toCharacterArray
+    readonly 'trimEnd': A.trimEnd
 }
