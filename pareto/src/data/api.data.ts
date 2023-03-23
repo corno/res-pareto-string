@@ -1,11 +1,11 @@
 import * as pd from 'pareto-core-data'
 
-import {algorithm, sfunction } from "lib-pareto-typescript-project/dist/submodules/project/shorthands"
+import { algorithm, constructor, data, dependent, sfunction } from "lib-pareto-typescript-project/dist/submodules/project/shorthands"
 
 import * as g_project from "lib-pareto-typescript-project/dist/submodules/project"
 const d = pd.d
 
-export const $: g_project.T.ModuleDefinition.api.root<pd.SourceLocation> =  {
+export const $: g_project.T.ModuleDefinition.api.root<pd.SourceLocation> = {
     'algorithms': d({
         "fromCharacterArray": algorithm(sfunction("this", {}, "FromCharacterArray"), {}),
         "length": algorithm(sfunction("this", {}, "Length"), {}),
@@ -16,5 +16,8 @@ export const $: g_project.T.ModuleDefinition.api.root<pd.SourceLocation> =  {
         "substr": algorithm(sfunction("this", {}, "Substr"), {}),
         "toCharacterArray": algorithm(sfunction("this", {}, "ToCharacterArray"), {}),
         "trimEnd": algorithm(sfunction("this", {}, "TrimEnd"), {}),
+
+        "createStringBuilder": algorithm(constructor("this", {}, "CreateStringBuilder"), {}, dependent(data("common", {}, "String"), {
+        }, {})),
     }),
 }

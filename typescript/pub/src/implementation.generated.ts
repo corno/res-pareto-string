@@ -1,4 +1,5 @@
 import { API } from "./api.generated"
+import { $$ as icreateStringBuilder } from "./implementations/createStringBuilder.native"
 import { $$ as ifromCharacterArray } from "./implementations/fromCharacterArray.native"
 import { $$ as ilength } from "./implementations/length.native"
 import { $$ as ireplaceAll } from "./implementations/replaceAll.native"
@@ -10,6 +11,7 @@ import { $$ as itoCharacterArray } from "./implementations/toCharacterArray.nati
 import { $$ as itrimEnd } from "./implementations/trimEnd.native"
 
 export const $r: API = {
+    'createStringBuilder': icreateStringBuilder,
     'fromCharacterArray': ifromCharacterArray,
     'length': ilength,
     'replaceAll': ireplaceAll,

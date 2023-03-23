@@ -29,6 +29,7 @@ export const $: g_project.T.Project<pd.SourceLocation> = {
             'api': {
                 'root': api,
                 'imports': d({
+                    "common": external("glo-pareto-common"),
                     "this": this_(),
                 }),
             },
