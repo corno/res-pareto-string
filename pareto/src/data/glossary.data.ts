@@ -1,6 +1,7 @@
 import * as pd from 'pareto-core-data'
 
 import {
+    aInterface,
     aInterfaceMethod,
     aInterfaceReference,
     array, constructor, data, externalTypeReference, group, imp, member, number, optional, sfunction, streamconsumer, string, type, typeReference
@@ -43,11 +44,11 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     }),
     'asynchronous': {
         'interfaces': d({
-            "StringConsumer": aInterfaceMethod(externalTypeReference("common", "String")),
-            "StringStreamConsumer": streamconsumer(
+            "StringConsumer": aInterface(aInterfaceMethod(externalTypeReference("common", "String"))),
+            "StringStreamConsumer": aInterface(streamconsumer(
                 aInterfaceMethod(externalTypeReference("common", "String")),
                 aInterfaceMethod(null),
-            ),
+            )),
         }),
         'algorithms': d({
             "CreateStringBuilder": constructor(aInterfaceReference("StringStreamConsumer"), {
