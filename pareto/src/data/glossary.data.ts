@@ -16,32 +16,35 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     'imports': d({
         "common": imp({}),
     }),
-    'types': d({
-        "CharacterArray": type(array(number())),
-        "SplitData": type(group({
-            "value": member(string()),
-            "splitter": member(string()),
-        })),
-        "SplitIn2Result": type(group({
-            "first": member(string()),
-            "second": member(optional(string())),
-        })),
-        "SplitResult": type(array(string())),
-        "StartsWithData": type(group({
-            "contextString": member(string()),
-            "searchString": member(string()),
-        })),
-        "SubstrData": type(group({
-            "value": member(string()),
-            "begin": member(number()),
-            "length": member(number()),
-        })),
-        "ReplaceAllData": type(group({
-            "value": member(string()),
-            "pattern": member(string()),
-            "replacement": member(string()),
-        })),
-    }),
+    'root': {
+        'namespaces': d({}),
+        'types': d({
+            "CharacterArray": type(array(number())),
+            "SplitData": type(group({
+                "value": member(string()),
+                "splitter": member(string()),
+            })),
+            "SplitIn2Result": type(group({
+                "first": member(string()),
+                "second": member(optional(string())),
+            })),
+            "SplitResult": type(array(string())),
+            "StartsWithData": type(group({
+                "contextString": member(string()),
+                "searchString": member(string()),
+            })),
+            "SubstrData": type(group({
+                "value": member(string()),
+                "begin": member(number()),
+                "length": member(number()),
+            })),
+            "ReplaceAllData": type(group({
+                "value": member(string()),
+                "pattern": member(string()),
+                "replacement": member(string()),
+            })),
+        }),
+    },
     'asynchronous': {
         'interfaces': d({
             "StringConsumer": aInterface(aInterfaceMethod(externalTypeReference("common", "String"))),
