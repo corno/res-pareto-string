@@ -20,9 +20,11 @@ export namespace ASYNC {
         
         
         export namespace C {
-            export type CreateStringBuilder = ($is: {
-                readonly 'handler': ASYNC.I.StringConsumer
-            }) => ASYNC.I.StringStreamConsumer
+            export type CreateStringBuilder = {
+                'construct': ($is: {
+                    readonly 'handler': ASYNC.I.StringConsumer
+                }) => ASYNC.I.StringStreamConsumer
+            }
         }
     }
 }
