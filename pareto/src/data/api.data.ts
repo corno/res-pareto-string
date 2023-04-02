@@ -17,7 +17,5 @@ export const $: g_project.T.ModuleDefinition.api.root<pd.SourceLocation> = {
         "toCharacterArray": algorithm(sfunction("this", {}, "ToCharacterArray"), {}),
         "trimEnd": algorithm(sfunction("this", {}, "TrimEnd"), {}),
 
-        "createStringBuilder": algorithm(constructor("this", {}, "CreateStringBuilder"), {}, dependent(data("common", {}, "String"), {
-        }, {})),
     }),
 }

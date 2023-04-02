@@ -13,12 +13,9 @@ export namespace D {
     
     
     
-    
 }
 
 export namespace A {
-    
-    export type createStringBuilder = ($: g_common.T.String, ) => g_this.ASYNC.A.C.CreateStringBuilder
     
     export type fromCharacterArray = () => g_this.SYNC.A.F.FromCharacterArray
     
@@ -40,7 +37,6 @@ export namespace A {
 }
 
 export type API = {
-    readonly 'createStringBuilder': A.createStringBuilder
     readonly 'fromCharacterArray': A.fromCharacterArray
     readonly 'length': A.length
     readonly 'replaceAll': A.replaceAll

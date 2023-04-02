@@ -47,16 +47,8 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     },
     'asynchronous': {
         'interfaces': d({
-            "StringConsumer": aInterface(aInterfaceMethod(externalTypeReference("common", "String"))),
-            "StringStreamConsumer": aInterface(streamconsumer(
-                aInterfaceMethod(externalTypeReference("common", "String")),
-                aInterfaceMethod(null),
-            )),
         }),
         'algorithms': d({
-            "CreateStringBuilder": constructor(aInterfaceReference("StringStreamConsumer"), {
-                "handler": aInterfaceReference("StringConsumer"),
-            }),
         }),
     },
     'synchronous': {

@@ -6,27 +6,9 @@ import * as g_common from "glo-pareto-common"
 
 export namespace ASYNC {
     
-    export namespace I {
-        
-        export type StringConsumer = ($: g_common.T.String, ) => void
-        
-        export type StringStreamConsumer = {
-            'data': ($: g_common.T.String, ) => void
-            'end': () => void
-        }
-    }
+    export namespace I {}
     
-    export namespace A {
-        
-        
-        export namespace C {
-            export type CreateStringBuilder = {
-                'construct': ($is: {
-                    readonly 'handler': ASYNC.I.StringConsumer
-                }) => ASYNC.I.StringStreamConsumer
-            }
-        }
-    }
+    export namespace A {}
 }
 
 export namespace SYNC {
