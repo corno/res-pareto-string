@@ -9,7 +9,7 @@ import { $$ as isubstr } from "./implementations/substr.native"
 import { $$ as itoCharacterArray } from "./implementations/toCharacterArray.native"
 import { $$ as itrimEnd } from "./implementations/trimEnd.native"
 
-export const $r: API = {
+export const $api: API = {
     'fromCharacterArray': ifromCharacterArray,
     'length': ilength,
     'replaceAll': ireplaceAll,
