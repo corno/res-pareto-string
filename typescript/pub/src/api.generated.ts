@@ -13,11 +13,14 @@ export namespace D {
     
     
     
+    
 }
 
 export namespace A {
     
     export type fromCharacterArray = () => g_this.SYNC.A.F.FromCharacterArray
+    
+    export type join = () => g_this.SYNC.A.F.Join
     
     export type length = () => g_this.SYNC.A.F.Length
     
@@ -38,6 +41,7 @@ export namespace A {
 
 export type API = {
     readonly 'fromCharacterArray': A.fromCharacterArray
+    readonly 'join': A.join
     readonly 'length': A.length
     readonly 'replaceAll': A.replaceAll
     readonly 'split': A.split

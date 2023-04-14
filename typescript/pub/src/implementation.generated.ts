@@ -1,5 +1,6 @@
 import { API } from "./api.generated"
 import { $$ as ifromCharacterArray } from "./implementations/fromCharacterArray.native"
+import { $$ as ijoin } from "./implementations/join.native"
 import { $$ as ilength } from "./implementations/length.native"
 import { $$ as ireplaceAll } from "./implementations/replaceAll.native"
 import { $$ as isplit } from "./implementations/split.native"
@@ -11,6 +12,7 @@ import { $$ as itrimEnd } from "./implementations/trimEnd.native"
 
 export const $api: API = {
     'fromCharacterArray': ifromCharacterArray,
+    'join': ijoin,
     'length': ilength,
     'replaceAll': ireplaceAll,
     'split': isplit,

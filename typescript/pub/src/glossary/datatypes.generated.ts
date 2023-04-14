@@ -13,6 +13,18 @@ export namespace T {
     
     export type CharacterArray = pt.Array<number>
     
+    export namespace JoinData {
+        
+        export type first = string
+        
+        export type second = string
+    }
+    
+    export type JoinData = {
+        readonly 'first': string
+        readonly 'second': string
+    }
+    
     export namespace ReplaceAllData {
         
         export type pattern = string

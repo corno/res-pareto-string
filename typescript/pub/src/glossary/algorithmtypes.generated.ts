@@ -22,6 +22,11 @@ export namespace SYNC {
         
         
         export namespace F {
+            export type Join = ($: T.JoinData) => g_common.T.String
+        }
+        
+        
+        export namespace F {
             export type Length = ($: g_common.T.String) => g_common.T.Number
         }
         

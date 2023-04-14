@@ -8,6 +8,7 @@ const d = pd.d
 export const $: g_project.T.ModuleDefinition.api.root<pd.SourceLocation> = {
     'algorithms': d({
         "fromCharacterArray": algorithm(sfunction("this", {}, "FromCharacterArray"), {}),
+        "join": algorithm(sfunction("this", {}, "Join"), {}),
         "length": algorithm(sfunction("this", {}, "Length"), {}),
         "replaceAll": algorithm(sfunction("this", {}, "ReplaceAll"), {}),
         "split": algorithm(sfunction("this", {}, "Split"), {}),
@@ -16,6 +17,5 @@ export const $: g_project.T.ModuleDefinition.api.root<pd.SourceLocation> = {
         "substr": algorithm(sfunction("this", {}, "Substr"), {}),
         "toCharacterArray": algorithm(sfunction("this", {}, "ToCharacterArray"), {}),
         "trimEnd": algorithm(sfunction("this", {}, "TrimEnd"), {}),
-
     }),
 }

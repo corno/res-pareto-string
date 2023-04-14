@@ -43,6 +43,10 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
                 "pattern": member(string()),
                 "replacement": member(string()),
             })),
+            "JoinData": type(group({
+                "first": member(string()),
+                "second": member(string()),
+            }))
         }),
     },
     'asynchronous': {
@@ -57,6 +61,7 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
             "ReplaceAll": sfunction(externalTypeReference("common", "String"), data(typeReference("ReplaceAllData"))),
             "Substr": sfunction(externalTypeReference("common", "String"), data(typeReference("SubstrData"))),
             "ToCharacterArray": sfunction(typeReference("CharacterArray"), data(externalTypeReference("common", "String"))),
+            "Join": sfunction(externalTypeReference("common", "String"), data(typeReference("JoinData"))),
             "FromCharacterArray": sfunction(externalTypeReference("common", "String"), data(typeReference("CharacterArray"))),
             "Split": sfunction(typeReference("SplitResult"), data(typeReference("SplitData"))),
             "SplitIn2": sfunction(typeReference("SplitIn2Result"), data(typeReference("SplitData"))),
