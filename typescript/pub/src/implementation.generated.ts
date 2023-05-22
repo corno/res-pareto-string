@@ -1,4 +1,5 @@
 import { API } from "./api.generated"
+import { $$ as iescape } from "./implementations/escape.native"
 import { $$ as ifromCharacterArray } from "./implementations/fromCharacterArray.native"
 import { $$ as ijoin } from "./implementations/join.native"
 import { $$ as ilength } from "./implementations/length.native"
@@ -11,6 +12,7 @@ import { $$ as itoCharacterArray } from "./implementations/toCharacterArray.nati
 import { $$ as itrimEnd } from "./implementations/trimEnd.native"
 
 export const $api: API = {
+    'escape': iescape,
     'fromCharacterArray': ifromCharacterArray,
     'join': ijoin,
     'length': ilength,

@@ -7,6 +7,7 @@ const d = pd.d
 
 export const $: g_project.T.ModuleDefinition.api.root<pd.SourceLocation> = {
     'algorithms': d({
+        "escape": algorithm(sfunction("this", {}, "Escape")),
         "fromCharacterArray": algorithm(sfunction("this", {}, "FromCharacterArray"), {}),
         "join": algorithm(sfunction("this", {}, "Join"), {}),
         "length": algorithm(sfunction("this", {}, "Length"), {}),

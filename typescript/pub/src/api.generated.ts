@@ -14,9 +14,12 @@ export namespace D {
     
     
     
+    
 }
 
 export namespace A {
+    
+    export type escape = () => g_this.SYNC.A.F.Escape
     
     export type fromCharacterArray = () => g_this.SYNC.A.F.FromCharacterArray
     
@@ -40,6 +43,7 @@ export namespace A {
 }
 
 export type API = {
+    readonly 'escape': A.escape
     readonly 'fromCharacterArray': A.fromCharacterArray
     readonly 'join': A.join
     readonly 'length': A.length

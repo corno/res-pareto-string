@@ -46,6 +46,12 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
             "JoinData": type(group({
                 "first": member(string()),
                 "second": member(string()),
+            })),
+
+            "EscapeParameters": type(group({
+                "string": member(string()),
+                "escape": member(string()),
+                "patterns to escape": member(array(string())),
             }))
         }),
     },
@@ -58,6 +64,8 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     'synchronous': {
         'interfaces': d({}),
         'algorithms': d({
+            "Escape": sfunction(externalTypeReference("common", "String"), data(typeReference("EscapeParameters"))),
+
             "ReplaceAll": sfunction(externalTypeReference("common", "String"), data(typeReference("ReplaceAllData"))),
             "Substr": sfunction(externalTypeReference("common", "String"), data(typeReference("SubstrData"))),
             "ToCharacterArray": sfunction(typeReference("CharacterArray"), data(externalTypeReference("common", "String"))),

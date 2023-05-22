@@ -17,6 +17,11 @@ export namespace SYNC {
         
         
         export namespace F {
+            export type Escape = ($: T.EscapeParameters) => g_common.T.String
+        }
+        
+        
+        export namespace F {
             export type FromCharacterArray = ($: T.CharacterArray) => g_common.T.String
         }
         
